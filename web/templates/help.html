@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | DroneRescue AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <a class="sidebar-brand" href="/home"><div class="brand-mark">DR</div><div><h1>DroneRescue</h1><span>AI COMMAND CENTER</span></div></a>
+  <nav class="navigation">
+    <p class="nav-label">MAIN</p>
+    <a class="nav-item" href="/home"><span>⌂</span>Home</a><a class="nav-item" href="/dashboard"><span>▣</span>Dashboard</a><a class="nav-item" href="/analyze-image"><span>◇</span>Analyze Image</a><a class="nav-item" href="/reports"><span>▤</span>Reports</a><a class="nav-item" href="/analysis-history"><span>◈</span>Analysis History</a>
+    <p class="nav-label system-label">SYSTEM</p>
+    <a class="nav-item " href="/settings"><span>⚙</span>Settings</a>
+    <a class="nav-item active" href="/help"><span>?</span>Help</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="user-card"><div class="user-avatar">{{ username[0]|upper if username else 'P' }}</div><div><strong>{{ username or 'Project User' }}</strong><span>Administrator</span></div></div>
+    <a class="logout-button" href="/logout"><span>↪</span>Logout</a>
+  </div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div><span class="page-label">HELP</span><h2>Help</h2></div><div class="top-actions"><button class="theme-toggle" data-theme-toggle type="button">☾</button><div class="system-status"><span class="status-dot"></span>SYSTEM ONLINE</div></div></header>
+<main class="page-content">
+<section class="page-intro"><p class="eyebrow">SUPPORT</p><h1>DroneRescue Help</h1><p class="muted">Quick guide to using the project dashboard.</p></section>
+<div class="help-grid">
+<article class="info-card"><span class="step-number">01</span><h2>Home</h2><p>Read the project introduction and use the buttons to open image analysis or the dashboard.</p></article>
+<article class="info-card"><span class="step-number">02</span><h2>Analyze Image</h2><p>Select an aerial image and run the complete AI pipeline. The result is also saved to Analysis History.</p></article>
+<article class="info-card"><span class="step-number">03</span><h2>Dashboard</h2><p>View flood classification, full-image segmentation, object counts, flood impact and emergency assessment.</p></article>
+<article class="info-card"><span class="step-number">04</span><h2>Reports & History</h2><p>Reports and Analysis History show completed analyses. History can be cleared from the history page.</p></article>
+<article class="info-card"><span class="step-number">05</span><h2>Settings</h2><p>Use Account, Appearance, AI analysis preferences and Data & Reports controls. Theme preference is remembered in the browser.</p></article>
+<article class="info-card"><span class="step-number">06</span><h2>Important note</h2><p>Emergency severity and rescue priority are project-defined rules for academic demonstration; they are not official emergency-service standards.</p></article>
+</div>
+</main>
+</div></div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body></html>

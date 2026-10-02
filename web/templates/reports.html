@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports | DroneRescue AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <a class="sidebar-brand" href="/home"><div class="brand-mark">DR</div><div><h1>DroneRescue</h1><span>AI COMMAND CENTER</span></div></a>
+  <nav class="navigation">
+    <p class="nav-label">MAIN</p>
+    <a class="nav-item" href="/home"><span>⌂</span>Home</a><a class="nav-item" href="/dashboard"><span>▣</span>Dashboard</a><a class="nav-item" href="/analyze-image"><span>◇</span>Analyze Image</a><a class="nav-item active" href="/reports"><span>▤</span>Reports</a><a class="nav-item" href="/analysis-history"><span>◈</span>Analysis History</a>
+    <p class="nav-label system-label">SYSTEM</p>
+    <a class="nav-item " href="/settings"><span>⚙</span>Settings</a>
+    <a class="nav-item " href="/help"><span>?</span>Help</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="user-card"><div class="user-avatar">{{ username[0]|upper if username else 'P' }}</div><div><strong>{{ username or 'Project User' }}</strong><span>Administrator</span></div></div>
+    <a class="logout-button" href="/logout"><span>↪</span>Logout</a>
+  </div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div><span class="page-label">REPORTS</span><h2>Reports</h2></div><div class="top-actions"><button class="theme-toggle" data-theme-toggle type="button">☾</button><div class="system-status"><span class="status-dot"></span>SYSTEM ONLINE</div></div></header>
+<main class="page-content">
+<section class="page-intro"><p class="eyebrow">DATA & REPORTS</p><h1>Generated Reports</h1><p class="muted">Review compact incident reports created by the AI analysis pipeline.</p></section>
+<section class="panel"><div class="panel-header"><h3>Reports</h3><button class="secondary-button small" id="refreshReports">REFRESH</button></div>
+<div id="reportsList" class="record-list"><div class="empty-state">Loading reports...</div></div></section>
+</main>
+</div></div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body></html>

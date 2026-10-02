@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+
+# FloodNet dataset
+
+dataset/FloodNet/FloodNet-Supervised_v1.0/
+dataset/yolo_vehicle_dataset/
+dataset/yolo_vehicle_dataset.zip
+
+# YOLO experiment/training runs
+
+runs/
+
+# Runtime web data
+
+web/data/analysis_history.json
+web/uploads/
+web/static/uploads/
+web/static/segmentation/
+
+# Generated outputs
+
+outputs/*.csv
+outputs/*.npy
+outputs/unet_predictions/
+outputs/yolo_detections/
+outputs/vehicle_yolo_samples/
+
+# Experimental YOLO vehicle model
+
+models/yolo_vehicle/

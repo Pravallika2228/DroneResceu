@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In | DroneRescue AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="auth-page">
+<div class="auth-shell">
+  <section class="auth-brand">
+    <div class="brand-mark large">DR</div>
+    <p class="eyebrow">AERIAL INTELLIGENCE</p>
+    <h1>DroneRescue</h1>
+    <h2>AI Flood Assessment & Emergency Monitoring</h2>
+    <p>Transforming aerial imagery into actionable emergency intelligence.</p>
+  </section>
+  <section class="auth-card">
+    <p class="eyebrow">WELCOME BACK</p>
+    <h2>Sign in to DroneRescue</h2>
+    <p class="muted">Access your emergency monitoring workspace.</p>
+    {% if error %}<div class="alert error">{{ error }}</div>{% endif %}
+    <form method="POST" action="{{ url_for('login') }}" id="loginForm">
+      <label>Email or username</label>
+      <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter your email or username" required>
+      <label>Password</label>
+      <div class="password-wrap">
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+        <button class="eye-button" id="togglePassword" type="button" aria-label="Show password" title="Show password">◉</button>
+      </div>
+      <div class="form-row">
+        <label class="checkbox-label"><input id="remember" name="remember" type="checkbox"> <span>Remember me</span></label>
+        <button class="text-button" type="button" onclick="alert('For this mini-project demo, use the credentials configured by your project team.')">Forgot password?</button>
+      </div>
+      <button class="primary-button wide" type="submit">SIGN IN <span>→</span></button>
+    </form>
+    <p class="auth-footer">DRONERESCUE AI &nbsp;•&nbsp; SECURE ACCESS</p>
+  </section>
+</div>
+<script>
+const savedUser = localStorage.getItem("droneRescueRememberedUser");
+if (savedUser) { document.getElementById("username").value = savedUser; document.getElementById("remember").checked = true; }
+document.getElementById("togglePassword").addEventListener("click", () => {
+  const input = document.getElementById("password");
+  const button = document.getElementById("togglePassword");
+  input.type = input.type === "password" ? "text" : "password";
+  button.textContent = input.type === "password" ? "◉" : "◌";
+});
+document.getElementById("loginForm").addEventListener("submit", () => {
+  const user = document.getElementById("username").value.trim();
+  if (document.getElementById("remember").checked) localStorage.setItem("droneRescueRememberedUser", user);
+  else localStorage.removeItem("droneRescueRememberedUser");
+});
+</script>
+</body>
+</html>

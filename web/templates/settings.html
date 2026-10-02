@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | DroneRescue AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <a class="sidebar-brand" href="/home"><div class="brand-mark">DR</div><div><h1>DroneRescue</h1><span>AI COMMAND CENTER</span></div></a>
+  <nav class="navigation">
+    <p class="nav-label">MAIN</p>
+    <a class="nav-item" href="/home"><span>⌂</span>Home</a><a class="nav-item" href="/dashboard"><span>▣</span>Dashboard</a><a class="nav-item" href="/analyze-image"><span>◇</span>Analyze Image</a><a class="nav-item" href="/reports"><span>▤</span>Reports</a><a class="nav-item" href="/analysis-history"><span>◈</span>Analysis History</a>
+    <p class="nav-label system-label">SYSTEM</p>
+    <a class="nav-item active" href="/settings"><span>⚙</span>Settings</a>
+    <a class="nav-item " href="/help"><span>?</span>Help</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="user-card"><div class="user-avatar">{{ username[0]|upper if username else 'P' }}</div><div><strong>{{ username or 'Project User' }}</strong><span>Administrator</span></div></div>
+    <a class="logout-button" href="/logout"><span>↪</span>Logout</a>
+  </div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div><span class="page-label">SETTINGS</span><h2>Settings</h2></div><div class="top-actions"><button class="theme-toggle" data-theme-toggle type="button">☾</button><div class="system-status"><span class="status-dot"></span>SYSTEM ONLINE</div></div></header>
+<main class="page-content">
+<section class="page-intro"><p class="eyebrow">SYSTEM</p><h1>Application Settings</h1><p class="muted">Manage account information, interface preferences and AI presentation options.</p></section>
+<section class="settings-section"><div class="section-heading"><span>01</span><div><h2>Account</h2><p>Manage your account information.</p></div></div>
+<div class="settings-card">
+<div class="setting-row"><div><h3>Manage Account</h3><p>Update the username shown in the application.</p></div><button class="secondary-button small" id="manageAccount">MANAGE</button></div>
+<div class="setting-row"><div><h3>Change Password</h3><p>Update the demo application's password information.</p></div><button class="secondary-button small" id="changePassword">CHANGE</button></div>
+<div class="setting-row"><div><h3>Login Sessions</h3><p>View the current signed-in session.</p></div><button class="secondary-button small" id="viewSessions">VIEW</button></div>
+</div></section>
+<section class="settings-section"><div class="section-heading"><span>02</span><div><h2>Appearance</h2><p>Customize the application interface.</p></div></div>
+<div class="settings-card"><div class="setting-row"><div><h3>Theme</h3><p>Switch between dark and light mode.</p></div><button class="toggle-button" data-theme-toggle type="button">TOGGLE</button></div></div></section>
+<section class="settings-section"><div class="section-heading"><span>03</span><div><h2>AI Analysis</h2><p>Configure analysis presentation.</p></div></div>
+<div class="settings-card">
+<div class="setting-row"><div><h3>Segmentation Overlay</h3><p>Display the Weighted U-Net segmentation overlay.</p></div><button class="switch active" data-setting="segmentationOverlay" type="button"><span></span></button></div>
+<div class="setting-row"><div><h3>Detection Boxes</h3><p>Display YOLO detection boxes when available.</p></div><button class="switch active" data-setting="detectionBoxes" type="button"><span></span></button></div>
+</div></section>
+<section class="settings-section"><div class="section-heading"><span>04</span><div><h2>Data & Reports</h2><p>Manage analysis records and reports.</p></div></div>
+<div class="settings-card">
+<div class="setting-row"><div><h3>Analysis History</h3><p>View previously analyzed images.</p></div><a class="secondary-button small" href="/analysis-history">VIEW</a></div>
+<div class="setting-row"><div><h3>Generated Reports</h3><p>Access generated incident reports.</p></div><a class="secondary-button small" href="/reports">VIEW</a></div>
+</div></section>
+<section class="settings-section"><div class="section-heading"><span>05</span><div><h2>About</h2><p>Information about DroneRescue AI.</p></div></div>
+<div class="info-card"><h2>DroneRescue AI</h2><p>AI-Based Flood Assessment & Emergency Monitoring Using Drone Imagery.</p><p class="muted">EfficientNetB0 + XGBoost • Weighted U-Net • YOLO • Emergency Assessment Engine</p></div></section>
+<div id="settingsModal" class="modal" hidden><div class="modal-card"><button class="modal-close" id="closeSettingsModal">×</button><div id="modalContent"></div></div></div>
+</main>
+</div></div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body></html>

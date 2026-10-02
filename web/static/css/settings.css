@@ -1,0 +1,333 @@
+.settings-page {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 40px;
+}
+
+
+.settings-intro {
+
+    margin-bottom: 40px;
+}
+
+
+.settings-intro h3 {
+
+    margin-top: 7px;
+
+    font-size: 29px;
+}
+
+
+.settings-intro p:last-child {
+
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* SECTION */
+
+.settings-section {
+
+    margin-bottom: 35px;
+}
+
+
+.settings-title {
+
+    display: flex;
+
+    gap: 16px;
+
+    align-items: flex-start;
+
+    margin-bottom: 13px;
+}
+
+
+.settings-title > span {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    padding-top: 3px;
+}
+
+
+.settings-title h4 {
+
+    font-size: 14px;
+}
+
+
+.settings-title p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* CARD */
+
+.settings-card {
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+.setting-row {
+
+    min-height: 80px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.setting-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.setting-row strong {
+
+    font-size: 12px;
+}
+
+
+.setting-row p {
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.setting-row button {
+
+    min-width: 75px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #56624f;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--accent-soft);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.7px;
+
+    cursor: pointer;
+}
+
+
+.setting-row button:hover {
+
+    background: rgba(168, 198, 108, 0.08);
+
+    border-color: var(--accent);
+
+}
+
+
+/* SWITCH */
+
+.switch {
+
+    position: relative;
+
+    width: 40px;
+
+    height: 21px;
+
+    flex-shrink: 0;
+}
+
+
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+
+.switch span {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 20px;
+
+    background: #303930;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.switch span::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    left: 3px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: #9ca59b;
+
+    transition: 0.2s;
+}
+
+
+.switch input:checked + span {
+
+    background: #657d43;
+}
+
+
+.switch input:checked + span::before {
+
+    transform: translateX(19px);
+
+    background: #edf2df;
+}
+
+
+/* ABOUT */
+
+.about-card {
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168, 198, 108, 0.07),
+            transparent
+        ),
+        var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+.about-card h4 {
+
+    color: var(--accent-soft);
+
+    font-size: 16px;
+}
+
+
+.about-card p {
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.about-card span {
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #657065;
+
+    font-size: 9px;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* LIGHT MODE */
+
+body.light-mode .setting-row button {
+
+    border-color: #aab1a4;
+
+    color: #536a30;
+}
+
+
+body.light-mode .about-card {
+
+    background: #f7f7f1;
+}
+
+
+@media (max-width: 700px) {
+
+    .settings-page {
+
+        padding: 25px 20px;
+    }
+
+    .setting-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .setting-row button {
+
+        align-self: flex-start;
+    }
+}

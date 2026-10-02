@@ -1,0 +1,179 @@
+/* ============================================================
+   DRONERESCUE HOME + VEHICLE ADDITIONS
+   These rules are intentionally separate so the existing
+   dashboard.css dark/light theme remains untouched.
+   ============================================================ */
+
+.home-section {
+    margin: 28px 0 22px;
+    padding: 34px;
+    border: 1px solid rgba(168, 198, 108, 0.25);
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(168,198,108,.08), rgba(255,255,255,.015));
+    overflow: hidden;
+}
+
+.home-copy {
+    max-width: 850px;
+}
+
+.home-section h3 {
+    margin: 8px 0 12px;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.05;
+}
+
+.home-description {
+    max-width: 760px;
+    margin: 0;
+    line-height: 1.7;
+    opacity: .82;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.home-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.primary-home-action {
+    background: #a8c66c;
+    color: #10150f;
+}
+
+.secondary-home-action {
+    border: 1px solid rgba(168,198,108,.45);
+    color: inherit;
+}
+
+.home-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.home-feature {
+    padding: 18px;
+    border: 1px solid rgba(168,198,108,.16);
+    border-radius: 14px;
+    background: rgba(255,255,255,.025);
+}
+
+.home-feature strong {
+    display: block;
+    color: #a8c66c;
+    font-size: 12px;
+    letter-spacing: .12em;
+    margin-bottom: 9px;
+}
+
+.home-feature span {
+    display: block;
+    font-weight: 750;
+    margin-bottom: 5px;
+}
+
+.home-feature p {
+    margin: 0;
+    font-size: 12px;
+    opacity: .68;
+    line-height: 1.5;
+}
+
+.dashboard-overview {
+    margin: 18px 0 10px;
+    padding: 4px 2px;
+}
+
+.dashboard-overview h3 {
+    margin: 5px 0;
+}
+
+.dashboard-overview p:last-child {
+    margin: 0;
+    opacity: .7;
+}
+
+.light-mode .home-section {
+    background: linear-gradient(135deg, #f2f5e9, #ffffff);
+    border-color: #cbd5b8;
+}
+
+.light-mode .home-feature {
+    background: #ffffff;
+    border-color: #d5dcc9;
+}
+
+.light-mode .secondary-home-action {
+    border-color: #aebc98;
+}
+
+@media (max-width: 1000px) {
+    .home-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .home-section {
+        padding: 24px;
+    }
+
+    .home-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ============================================================
+   SEPARATE HOME PAGE
+   ============================================================ */
+
+.home-page .main-area {
+    min-height: 100vh;
+}
+
+.home-page .home-section {
+    margin-top: 44px;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-page .home-copy {
+    max-width: 980px;
+}
+
+.home-page .home-description {
+    font-size: 16px;
+}
+
+.home-page .home-feature {
+    min-height: 120px;
+}
+
+.home-page .theme-toggle {
+    cursor: pointer;
+}
+
+.light-mode .home-page .home-section {
+    background: linear-gradient(135deg, #eef1e7, #f8f9f4);
+    border-color: #bcc7aa;
+}
